@@ -4,7 +4,7 @@
 " Maintainer:   Nick Moffitt <nick@zork.net>
 " Last Change:  01 Mar 2008
 " License:      WTFPL <http://sam.zoy.org/wtfpl/>
-" Version:      2.0
+" Version:      2.1
 "
 " This theme is based on Josh O'Rourke's Vim clone of the railscast
 " textmate theme.  The key thing I have done here is supply 256-color
@@ -44,95 +44,53 @@ hi link htmlTag                     xmlTag
 hi link htmlTagName                 xmlTagName
 hi link htmlEndTag                  xmlEndTag
 
-if has("gui_running")
-  highlight Normal                    guifg=#E6E1DC   guibg=#111111
-  highlight Cursor                    guifg=#000000   guibg=#FFFFFF
-  highlight CursorLine                guibg=#000000
+highlight Normal                    guifg=#E6E1DC guibg=#111111 
+highlight Cursor                    guifg=#000000 ctermfg=0 guibg=#FFFFFF ctermbg=15	
+highlight CursorLine                guibg=#000000 ctermbg=233 cterm=NONE
 
-  highlight Comment                   guifg=#BC9458   gui=italic
-  highlight Constant                  guifg=#6D9CBE
-  highlight Define                    guifg=#CC7833
-  highlight Error                     guifg=#FFFFFF   guibg=#990000
-  highlight Function                  guifg=#FFC66D   gui=NONE
-  highlight Identifier                guifg=#6D9CBE   gui=NONE
-  highlight Include                   guifg=#CC7833   gui=NONE
-  highlight PreCondit                 guifg=#CC7833   gui=NONE
-  highlight Keyword                   guifg=#CC7833
-  highlight LineNr                    guifg=#2B2B2B   guibg=#C0C0FF
-  highlight Number                    guifg=#A5C261
-  highlight PreProc                   guifg=#E6E1DC
-  highlight Search                    guifg=NONE guibg=#2b2b2b gui=italic
-  highlight Statement                 guifg=#CC7833   gui=NONE
-  highlight String                    guifg=#A5C261
-  highlight Title                     guifg=#FFFFFF
-  highlight Type                      guifg=#DA4939   gui=NONE
-  highlight Visual                    guibg=#5A647E
+highlight Comment                   guifg=#BC9458 ctermfg=180 gui=italic
+highlight Constant                  guifg=#6D9CBE ctermfg=73
+highlight Define                    guifg=#CC7833 ctermfg=173
+highlight Error                     guifg=#FFC66D ctermfg=221 guibg=#990000 ctermbg=88
+highlight Function                  guifg=#FFC66D ctermfg=221 gui=NONE cterm=NONE
+highlight Identifier                guifg=#6D9CBE ctermfg=73 gui=NONE cterm=NONE
+highlight Include                   guifg=#CC7833 ctermfg=173 gui=NONE cterm=NONE
+highlight PreCondit                 guifg=#CC7833 ctermfg=173 gui=NONE cterm=NONE
+highlight Keyword                   guifg=#CC7833 ctermfg=173 cterm=NONE
+highlight LineNr                    guifg=#2B2B2B ctermfg=159 guibg=#C0C0FF
+highlight Number                    guifg=#A5C261 ctermfg=107
+highlight PreProc                   guifg=#E6E1DC ctermfg=103
+highlight Search                    guifg=NONE ctermfg=NONE guibg=#2b2b2b ctermbg=235 gui=italic cterm=underline
+highlight Statement                 guifg=#CC7833 ctermfg=173 gui=NONE cterm=NONE
+highlight String                    guifg=#A5C261 ctermfg=107
+highlight Title                     guifg=#FFFFFF ctermfg=15
+highlight Type                      guifg=#DA4939 ctermfg=167 gui=NONE cterm=NONE
+highlight Visual                    guibg=#5A647E ctermbg=60
 
-  highlight DiffAdd                   guifg=#E6E1DC   guibg=#144212
-  highlight DiffDelete                guifg=#E6E1DC   guibg=#660000
+highlight DiffAdd                   guifg=#E6E1DC ctermfg=7 guibg=#519F50 ctermbg=71
+highlight DiffDelete                guifg=#E6E1DC ctermfg=7 guibg=#660000 ctermbg=52
+highlight Special                   guifg=#DA4939 ctermfg=167 
 
-  highlight pythonBuiltin             guifg=#6D9CBE   gui=NONE
-  highlight rubyBlockParameter        guifg=#FFFFFF
-  highlight rubyClass                 guifg=#FFFFFF
-  highlight rubyConstant              guifg=#DA4939
-  highlight rubyInstanceVariable      guifg=#D0D0FF
-  highlight rubyInterpolation         guifg=#519F50
-  highlight rubyLocalVariableOrMethod guifg=#D0D0FF
-  highlight rubyPredefinedConstant    guifg=#DA4939
-  highlight rubyPseudoVariable        guifg=#FFC66D
-  highlight rubyStringDelimiter       guifg=#A5C261
+highlight pythonBuiltin             guifg=#6D9CBE ctermfg=73 gui=NONE cterm=NONE
+highlight rubyBlockParameter        guifg=#FFFFFF ctermfg=15
+highlight rubyClass                 guifg=#FFFFFF ctermfg=15
+highlight rubyConstant              guifg=#DA4939 ctermfg=167
+highlight rubyInstanceVariable      guifg=#D0D0FF ctermfg=189
+highlight rubyInterpolation         guifg=#519F50 ctermfg=107
+highlight rubyLocalVariableOrMethod guifg=#D0D0FF ctermfg=189
+highlight rubyPredefinedConstant    guifg=#DA4939 ctermfg=167
+highlight rubyPseudoVariable        guifg=#FFC66D ctermfg=221
+highlight rubyStringDelimiter       guifg=#A5C261 ctermfg=143
 
-  highlight xmlTag                    guifg=#E8BF6A
-  highlight xmlTagName                guifg=#E8BF6A
-  highlight xmlEndTag                 guifg=#E8BF6A
-else
-  highlight Cursor                    ctermfg=0	   ctermbg=15	
-  highlight CursorLine                ctermbg=232	cterm=NONE
+highlight xmlTag                    guifg=#E8BF6A ctermfg=179
+highlight xmlTagName                guifg=#E8BF6A ctermfg=179
+highlight xmlEndTag                 guifg=#E8BF6A ctermfg=179
 
-  highlight Comment                   ctermfg=180   cterm=NONE
-  highlight Constant                  ctermfg=73	
-  highlight Define                    ctermfg=173	
-  highlight Error                     ctermfg=221	   ctermbg=88
-  highlight Function                  ctermfg=221	   cterm=NONE
-  highlight Identifier                ctermfg=73	   cterm=NONE
-  highlight Include                   ctermfg=173	   cterm=NONE
-  highlight PreCondit                 ctermfg=173	   cterm=NONE
-  highlight Keyword                   ctermfg=173	
-  highlight LineNr                    ctermfg=159
-  highlight Number                    ctermfg=107
-  highlight PreProc                   ctermfg=103
-  highlight Search                    ctermfg=NONE ctermbg=235 cterm=underline
-  highlight Statement                 ctermfg=173	   cterm=NONE
-  highlight String                    ctermfg=107
-  highlight Title                     ctermfg=15	
-  highlight Type                      ctermfg=167	   cterm=NONE
-  highlight Visual                    ctermbg=60	
+highlight mailSubject               guifg=#A5C261 ctermfg=107
+highlight mailHeaderKey             guifg=#FFC66D ctermfg=221
+highlight mailEmail                 guifg=#A5C261 ctermfg=107 gui=italic cterm=underline
 
-  highlight DiffAdd                   ctermfg=7	   ctermbg=235	
-  highlight DiffDelete                ctermfg=7	   ctermbg=52	
-  highlight Special                   ctermfg=167
-
-  highlight pythonBuiltin             ctermfg=73
-  "highlight rubyBlockParameter        ctermfg=15	
-  "highlight rubyClass                 ctermfg=15	
-  "highlight rubyConstant              ctermfg=167	
-  "highlight rubyInstanceVariable      ctermfg=189	
-  "highlight rubyInterpolation         ctermfg=107	
-  "highlight rubyLocalVariableOrMethod ctermfg=189	
-  "highlight rubyPredefinedConstant    ctermfg=167	
-  "highlight rubyPseudoVariable        ctermfg=221	
-  "highlight rubyStringDelimiter       ctermfg=143	
-
-  highlight xmlTag                    ctermfg=179	
-  highlight xmlTagName                ctermfg=179	
-  highlight xmlEndTag                 ctermfg=179	
-
-  highlight mailSubject			ctermfg=107
-  highlight mailHeaderKey		ctermfg=221
-  highlight mailEmail		ctermfg=107 cterm=underline
-
-  highlight SpellBad			ctermfg=160 ctermbg=NONE cterm=underline
-  highlight SpellRare			ctermfg=164 ctermbg=NONE cterm=underline
-  highlight SpellCap			ctermfg=25 ctermbg=NONE cterm=underline
-  highlight MatchParen			ctermfg=226 ctermbg=38
-endif
+highlight SpellBad                  guifg=#D70000 ctermfg=160 ctermbg=NONE cterm=underline
+highlight SpellRare                 guifg=#D75F87 ctermfg=168 guibg=NONE ctermbg=NONE gui=underline cterm=underline
+highlight SpellCap                  guifg=#D0D0FF ctermfg=189 guibg=NONE ctermbg=NONE gui=underline cterm=underline
+highlight MatchParen                guifg=#FFFFFF ctermfg=15 guibg=#005f5f ctermbg=23
